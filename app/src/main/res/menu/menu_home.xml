@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_post"
+        android:title="Đăng bài" />
+    <item
+        android:id="@+id/menu_liked_books"
+        android:title="Sách đã thích" />
+    <item
+        android:id="@+id/menu_commented"
+        android:title="Đã bình luận" />
+    <item
+        android:id="@+id/menu_settings"
+        android:title="Cài đặt" />
+    <item
+        android:id="@+id/menu_logout"
+        android:title="Đăng xuất" />
+</menu>

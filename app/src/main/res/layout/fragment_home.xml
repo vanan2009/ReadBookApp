@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Avatar Image -->
+            <ImageView
+                android:id="@+id/avatarImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/avatar"
+                android:background="@drawable/circle_background"
+                android:scaleType="centerCrop"
+                android:padding="4dp"/>
+
+            <!-- Welcome Text -->
+            <TextView
+                android:id="@+id/welcomeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hi, StrBerryAw!"
+                android:textSize="16sp"
+                android:background="@drawable/rounded_background"
+                android:gravity="center"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"/>
+
+            <!-- Search Icon -->
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_search"
+                android:background="@color/white"
+                android:padding="8dp"/>
+
+            <!-- Menu Icon -->
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_menu"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Mở menu tùy chọn"
+                android:onClick="openMenuHome" />
+
+        </LinearLayout>
+
+        <!-- RecyclerView hiển thị danh sách sách -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Buttons: Rate, Like, View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Rate Button -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_star"
+                    android:background="@drawable/circle_background"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rate"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Like Button -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_like"
+                    android:background="@drawable/circle_background"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Like"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- View Button -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/ic_view"
+                    android:background="@drawable/circle_background"
+                    android:padding="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Hot Stories -->
+        <TextView
+            android:text="Hot Stories 🔥"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Lặp lại các sách Hot Stories -->
+                <ImageView
+                    android:id="@+id/imgTruyenBacHo"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/truyenbacho"
+                    android:contentDescription="Bìa sách Truyện Bác Hồ"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="openStoryPage" />
+
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách Truyện Võ Nguyên Giáp"
+                    android:src="@drawable/truyenvonguyengiap" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/doremon" />
+                <!-- Thêm tiếp ảnh sách -->
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Newly Updated Story -->
+        <TextView
+            android:text="NEWLY UPDATED STORY"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!-- Lặp ảnh sách mới cập nhật -->
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách Truyện Kim Đồng"
+                    android:src="@drawable/truyenkimdong" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách Truyện Võ Thị Sáu"
+                    android:src="@drawable/truyenvothisau" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách truyện về lòng yêu nước"
+                    android:src="@drawable/truyenvelongyeuthuong" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách Pokemon"
+                    android:src="@drawable/pokemon" />
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="Bìa sách Doraemon"
+                    android:src="@drawable/doremon" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Book Button -->
+        <ImageView
+            android:id="@+id/bookButton"
+            android:layout_width="70dp"
+            android:layout_height="74dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/circle_background"
+            android:padding="16dp"
+            android:src="@drawable/ic_book" />
+
+    </LinearLayout>
+</ScrollView>

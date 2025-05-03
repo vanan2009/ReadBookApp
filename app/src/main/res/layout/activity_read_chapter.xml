@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề chương -->
+    <TextView
+        android:id="@+id/chapterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="Đang đọc: Chương 1" />
+
+    <!-- Nội dung chương -->
+    <TextView
+        android:id="@+id/chapterContentTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="16sp"
+        android:paddingTop="16dp"
+        android:text="Nội dung chương sẽ được hiển thị ở đây." />
+</LinearLayout>
